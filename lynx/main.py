@@ -1,5 +1,19 @@
-from .config import get_api_key
+from .audio import listen, speak
+import random
+
+slangs = ["You said : nothing", "why have you become a    silent monk", "dont play, please speak something", "ok, dont speak - stay silent whatever"]
+def brain(text):
+    return text
 
 def main():
-    API_KEY=get_api_key()
-    print(API_KEY)
+    speak("Hello, I'm Lynx - Your Personal Voice Assistant!")
+    while True:
+        user_text = listen()
+        if not user_text:
+            user_text = slangs[random.randint(0, 4)]
+        if "exit" in user_text.lower():
+            speak("Goodbye!")
+            break
+
+        reply = brain(user_text)
+        speak(reply)

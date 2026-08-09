@@ -16,10 +16,10 @@ This file is the living roadmap. Each phase = one concept + one working demo. Ti
 ## The architecture (the map) 🗺️
 
 ```
-┌──────────┐   listen()   ┌──────────────┐   text    ┌──────────────────────┐
+┌──────────┐   listen()   ┌─────────────────┐   text    ┌──────────────────────┐
 │  You     │ ───────────► │   audio.py   │ ────────► │       brain.py       │
-│ (voice)  │              │ (STT: Whisper)│           │  Claude API + agentic │
-└──────────┘              └──────────────┘           │  loop + tools        │
+│ (voice)  │              │ (STT: AssemblyAI)│         │  Claude API + agentic │
+└──────────┘              └─────────────────┘           │  loop + tools        │
      ▲                                                └──────────┬───────────┘
      │  speak()                                                    │ tool_use
      │  (TTS: edge-tts)                                            ▼
@@ -53,13 +53,13 @@ Claude never executes anything — it *requests* tool calls, and **your Python c
 
 ### Phase 1 — Lynx learns to speak (TTS)
 **Learn:** text-to-speech pipeline, audio output, why we abstract `speak()`.
-- [ ] `speak(text)` using **edge-tts** → mp3 → play via macOS `afplay`.
+- [x] `speak(text)` using **edge-tts** → mp3 → play via macOS `afplay`.
 - **Demo:** Lynx greets you out loud: *"Hello, I'm Lynx."*
 
 ### Phase 2 — Lynx learns to listen (STT)
-**Learn:** microphone capture (sample rate, mono), local Whisper transcription.
-- [ ] `listen()` using **sounddevice** to record + **faster-whisper** to transcribe.
-- [ ] Push-to-talk for the MVP (press Enter to start/stop). Continuous listening & wake word are stretch goals.
+**Learn:** microphone capture (sample rate, mono), cloud transcription (async job: upload → poll → text).
+- [x] `listen()` using **sounddevice** to record + **AssemblyAI** to transcribe (recorded → WAV → MP3 → uploaded → text returned).
+- [x] Push-to-talk for the MVP (press Enter to start/stop). Continuous listening & wake word are stretch goals.
 - **Demo:** you say something, Lynx prints exactly what you said.
 
 ### Phase 3 — Voice loop with a mock brain
