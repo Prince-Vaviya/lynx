@@ -1,9 +1,8 @@
 from .audio import listen, speak
+from .brain import brain
 import random
 
 slangs = ["You said : nothing", "why have you become a    silent monk", "dont play, please speak something", "ok, dont speak - stay silent whatever"]
-def brain(text):
-    return text
 
 def main():
     speak("Hello, I'm Lynx - Your Personal Voice Assistant!")

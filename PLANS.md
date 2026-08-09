@@ -64,7 +64,7 @@ Claude never executes anything — it *requests* tool calls, and **your Python c
 
 ### Phase 3 — Voice loop with a mock brain
 **Learn:** composing audio pieces into a loop; isolating audio bugs from AI bugs.
-- [ ] Loop: `listen()` → echo → `speak()`. Terminate with "exit".
+- [x] Loop: `listen()` → echo → `speak()`. Terminate with "exit".
 - **Demo:** a working voice conversation loop (dumb brain, proves the plumbing).
 
 ### Phase 4 — Lynx's brain (Claude API)
