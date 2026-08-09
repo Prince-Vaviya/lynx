@@ -1,0 +1,16 @@
+# Lynx dependencies
+# Core
+anthropic               # Claude brain (Phase 4)
+python-dotenv           # load .env secrets
+
+# Voice
+edge-tts                # speech synthesis — speaking (Phase 1)
+assemblyai              # speech recognition — listening (Phase 2)
+sounddevice             # microphone capture (Phase 2)
+numpy                   # audio data handling (Phase 2)
+soundfile                 
+
+# Google integrations
+google-api-python-client    # Calendar API client (Phase 7)
+google-auth-oauthlib        # OAuth 2.0 flow (Phase 7)
+google-auth-httplib2        # auth transport (Phase 7)

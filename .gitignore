@@ -1,0 +1,17 @@
+# Secrets — never commit these
+.env
+
+# Python cruft
+__pycache__/
+*.pyc
+
+# Virtual environment (yours is named "venv")
+venv/
+.venv/
+
+# OS junk
+.DS_Store
+
+# Google OAuth tokens (Phase 7)
+token.json
+credentials.json
